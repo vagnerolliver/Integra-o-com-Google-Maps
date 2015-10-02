@@ -1,0 +1,72 @@
+<div id="where_to_find" class="institutional internal">
+  <div class="stores container">
+    <div id="list">
+      <h1>Onde Encontrar</h1>
+      <p class="subtitle">Encontre a revenda Retex mais próxima de você</p>
+      <br>
+      <a href="http://www.retex.com.br/incontinencia-urinaria" target="_blank" style="text-decoration:none">
+      <img src="http://blog.retex.com.br/wp-content/uploads/2013/03/RETEX_Botao_Onde-Encontrar.png" class="hidden-mobile" unselectable="on" style="cursor: default;">
+      </a>
+      <br>
+      <br>
+      <form action="">
+        <fieldset>
+          <legend>&gt; Selecione o Estado</legend>
+          <label for="state">Estado</label>
+          <select name="state" id="state">
+            <option value="Todos" data-coords="-14.235004, -51.92528" selected="selected">Todos</option>
+          </select>
+          <label for="city">Cidade</label>
+          <!--
+            <select name="city" id="city"> -->
+          <option value="">Cidade</option>
+        </fieldset>
+        <ol id="resultset"></ol>
+      </form>
+    </div>
+    <!-- #list -->
+    <div id="map"></div>
+  </div>
+  <!-- .stores -->
+  <br>
+  <div id="formulario-encontrar-loja" class="contact modal-hidden">
+    <div id="msg-sucesso" style="display:none">
+      <h2>Encontre uma Loja Retex</h2>
+      <p class="legend">Obrigado pelo interesse, logo você recebera a lista de lojas na cidade desejada por e-mail.</p>
+    </div>
+    <div class="wp-form">
+      <h2>Encontre uma Loja Retex</h2>
+      <p class="legend">Preencha o Formulário abaixo para receber a lista de lojas na cidade selecinado</p>
+      <form action="/webform" method="post" id="sac_form" class="onde_encontrar" onsubmit="document.getElementsByName('reply_to')[0].value = document.getElementsByName('Email')[0].value">
+        <input name="key" value="retex-contato-sac-onde-encontrar" type="hidden">
+        <input type="hidden" name="reply_to" id="reply_to" value="">
+        <fieldset>
+          <label for="name">Nome</label>
+          <input name="Nome" id="sac_name" placeholder="Nome" type="text">
+          <label for="email">E-mail</label>
+          <input name="Email" id="sac_email" placeholder="E-mail" type="email">
+          <label class="city_selected" for="city_selected"> &gt; Cidade Selecionada</label>
+          <select name="Cidade" id="city_selected">
+            <option value="Selecione">Selecione</option>
+          </select>
+          <select name="Bairro" id="neighborhood" style="display:none">
+            <option value="">Bairro</option>
+          </select>
+          <textarea name="Mensagem" id="sac_message" rows="5" placeholder="Mensagem (opcional)"></textarea>
+          <button class="btn" type="submit">Enviar</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- #where_to_find -->
+<script type="text/javascript">
+  var email_client = document.getElementsByName('Email')[0]
+  var reply_to = document.getElementsByName('reply-to')[0]
+  
+  email_client.onblur = function() {
+    reply_to.value = this.value;
+    console.log(reply_to.value)
+  }
+  email_client.onblur()
+</script>
